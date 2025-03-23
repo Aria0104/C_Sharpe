@@ -1,0 +1,41 @@
+int[] zp = new int[12];
+Random ran = new Random();
+int month = 1;
+int general = 0;
+int avezp = 0;
+double pensoin = 0;
+int otclon = 0;
+int maxzp = int.MinValue;
+int minzp = int.MaxValue; ;
+int maxmonth = 1;
+int minmonth = 1;
+
+for (int i = 0; i < 12; i++)
+{
+    zp[i] = ran.Next(1000, 5000);
+    general += zp[i]; 
+}
+
+avezp = general / 12; 
+
+for (int i = 0;i < 12; i++, month++)
+{ 
+    pensoin = Math.Round(zp[i] * 0.02, 2); 
+    otclon = (general / 12) - zp[i] ; 
+    if (zp[i] > maxzp)
+    {
+        maxzp = zp[i];
+        maxmonth = i + 1;
+    }
+    if (zp[i] < minzp)
+    {
+        minzp = zp[i];
+        minmonth = i + 1;
+    }
+    Console.WriteLine($"Зарплата за {month} месяц: {zp[i]} | Отчисление пенсионному фонду: {pensoin} | Отклонение: {otclon}");
+}
+
+
+Console.WriteLine($"Общая зарплата за 12 меяцев: {general}");
+Console.WriteLine($"Средняя зарплата: {avezp}");
+Console.WriteLine($"Максимальная зарплата:{maxzp}, минимальная зарплата: {minzp}");
