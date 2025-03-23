@@ -1,0 +1,133 @@
+Console.WriteLine("Введите число");
+string input = Console.ReadLine();
+//Проверка на буковки
+while (true)
+{
+    int i = 0;
+    while (i < input.Length && input[i] >= '0' && input[i] <= '9')
+    {
+        i++;
+    }
+
+    if (i == input.Length && input.Length > 0)
+    {
+        break;
+    }
+
+    Console.WriteLine("Ошибка: Введено не число. Попробуйте снова.");
+    input = Console.ReadLine();
+}
+int number = Convert.ToInt32(input);
+int number_proverka = number;
+
+
+Console.WriteLine("Введите систему счисления (от 2 до 9)");
+string number_system_input = Console.ReadLine();
+
+
+// Проверка на буквы для системы счисления
+while (true)
+{
+    int i = 0;
+    while (i < number_system_input.Length && number_system_input[i] >= '0' && number_system_input[i] <= '9')
+    {
+        i++;
+    }
+
+    if (i == number_system_input.Length && number_system_input.Length > 0)
+    {
+        
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Ошибка: Введено не число. Попробуйте снова.");
+        number_system_input = Console.ReadLine();
+    }
+}
+
+
+int number_system = Convert.ToInt32(number_system_input);
+
+while (number_system < 2 || number_system > 9)
+{
+    Console.WriteLine("Неверно. Введите систему счисления от 2 до 9:");
+    number_system = Convert.ToInt32(Console.ReadLine());
+}
+
+
+
+while (number_proverka > 0)
+{
+    int tututu = number_proverka % 10;
+    if (tututu >= number_system)
+    {
+        Console.WriteLine("Такого числа в этой системе счисления нет. введите число");
+
+        number = Convert.ToInt32(Console.ReadLine());
+        number_proverka = number;
+    }
+    else
+    {
+        number_proverka = number_proverka / 10;
+    }
+}
+
+
+
+Console.WriteLine("В какую систему пееревести");
+string system_ip = Console.ReadLine();
+
+while (true)
+{
+    int i = 0;
+    while (i < system_ip.Length && system_ip[i] >= '0' && system_ip[i] <= '9')
+    {
+        i++;
+    }
+
+    if (i == system_ip.Length && system_ip.Length > 0)
+    {
+
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Ошибка: Введено не число. Попробуйте снова.");
+        system_ip = Console.ReadLine();
+    }
+}
+
+int system = Convert.ToInt32(system_ip);
+
+
+
+while (system < 2 || system > 9)
+{
+    Console.WriteLine("Неверно. Введите систему счисления от 2 до 9:");
+    system = Convert.ToInt32(Console.ReadLine());
+}
+
+double balalala = 0;
+double total_ten = 0;
+string count = number.ToString(); // чтобы узнать количество разрядов
+int stepen = 0;
+
+for (int i = 0; i < count.Length; i++)
+{
+    balalala = Math.Floor(number / Math.Pow(10, i)) % 10; // позволяет получить i-ю цифру числа начиная с конца
+    total_ten += Math.Floor(balalala * Math.Pow(number_system, stepen));
+    stepen++;
+}
+
+double lalala = 0;
+string result = "";
+
+while (total_ten > 0)
+{
+    lalala = Math.Floor(total_ten % system);
+    result = lalala.ToString() + result; // добавляем цифру в начало строкb
+    total_ten = Math.Floor(total_ten /= system); // переход к следующему разряду
+}
+
+Console.WriteLine($"Перевод числа {number}, из {number_system} системы счисления в {system}, ответ  {result}");
