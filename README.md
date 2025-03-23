@@ -1,1 +1,1 @@
-# -_Sharpe
+# С_Sharpe
