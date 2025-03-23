@@ -1,22 +1,110 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rondom", "Rondom\Rondom.csproj", "{44254182-C019-448C-9D42-1F164125901E}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44254182-C019-448C-9D42-1F164125901E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44254182-C019-448C-9D42-1F164125901E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44254182-C019-448C-9D42-1F164125901E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44254182-C019-448C-9D42-1F164125901E}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+﻿// я не сделала проверку на дурочка поскольку можно испоьзовать только условные конструкции, код с проверкой внизу
+Random random = new Random();
+int secretNumber = random.Next(1, 101);
+Console.WriteLine("Угодай число от 1 до 100, у вас есть 5 попыток");
+
+Console.WriteLine("Первая попытка");
+int pop1 = Convert.ToInt32(Console.ReadLine());
+
+    if (pop1 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Вторая попытка");
+int pop2 = Convert.ToInt32(Console.ReadLine());
+
+if (pop2 == secretNumber)
+    { Console.WriteLine("Поздравяю вы угадали"); }
+
+    else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Третья попытка");
+int pop3 = Convert.ToInt32(Console.ReadLine());
+
+if (pop3 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Четвертая попытка");
+int pop4 = Convert.ToInt32(Console.ReadLine());
+
+if (pop4 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Пятая попытка");
+int pop5 = Convert.ToInt32(Console.ReadLine());
+
+if (pop5 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали, ваши попытки закончились"); }
+
+/* С проверкой. Я решила использовать цикл while, который будет повторяться пока не будетт ведено правельное число
+Random random = new Random();
+int secretNumber = random.Next(1, 101);
+Console.WriteLine("Угодай число от 1 до 100, у вас есть 5 попыток");
+
+int Proverka()
+{
+    int input; 
+    while (true)
+    {
+        input = Convert.ToInt32(Console.ReadLine());
+        if (input >= 1 && input <= 100)
+            return input;
+        Console.WriteLine("Число должно быть от 1 до 100. Попробуйте снова:");
+    }
+}
+
+
+Console.WriteLine("Первая попытка");
+int pop1 = Proverka();
+
+if (pop1 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Вторая попытка");
+int pop2 = Proverka();
+
+if (pop2 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Третья попытка");
+int pop3 = Proverka();
+
+if (pop3 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Четвертая попытка");
+int pop4 = Proverka();
+
+if (pop4 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали попробуете еще"); }
+
+
+Console.WriteLine("Пятая попытка");
+int pop5 = Proverka();
+
+if (pop5 == secretNumber)
+{ Console.WriteLine("Поздравяю вы угадали"); }
+
+else { Console.WriteLine("Вы не угодали, ваши попытки закончились"); } */
