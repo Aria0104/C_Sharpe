@@ -1,22 +1,51 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Китайский", "Китайский\Китайский.csproj", "{571ED4D8-CF50-412C-A63E-152C7A5582CB}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{571ED4D8-CF50-412C-A63E-152C7A5582CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{571ED4D8-CF50-412C-A63E-152C7A5582CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{571ED4D8-CF50-412C-A63E-152C7A5582CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{571ED4D8-CF50-412C-A63E-152C7A5582CB}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System.Drawing;
+using System.Runtime.InteropServices;
+
+Console.WriteLine("Ваш год рождения");
+int yeer = Convert.ToInt32(Console.ReadLine());
+int year = yeer % 10;
+string color = "";
+string animal = "";
+
+if (year == 0 || year == 1)
+{ color = "метал"; }
+
+if (year == 2 || year == 3)
+{ color = "вода"; }
+
+if (year == 4 || year == 5)
+{ color = "дерево"; }
+
+if (year == 6 || year == 7)
+{ color = "огонь"; }
+
+if (year == 8 || year == 9)
+{ color = "земля"; }
+
+
+if ((yeer % 12) == 0)
+{ animal = "обезьяна"; }
+if ((yeer % 12) == 1)
+{ animal = "петух"; }
+if ((yeer % 12) == 2)
+{ animal = "собака"; }
+if ((yeer % 12) == 3)
+{ animal = "свинья"; }
+if ((yeer % 12) == 4)
+{ animal = "крыса"; }
+if ((yeer % 12) == 5)
+{ animal = "бык"; }
+if ((yeer % 12) == 6)
+{ animal = "тигр"; }
+if ((yeer % 12) == 7)
+{ animal = "кролик"; }
+if ((yeer % 12) == 8)
+{ animal = "дракон"; }
+if ((yeer % 12) == 9)
+{ animal = "змея"; }
+if ((yeer % 12) == 10)
+{ animal = "лошадь"; }
+if ((yeer % 12) == 11)
+{ animal = "овца"; }
+
+Console.WriteLine($"Ваше животное: {color} ваш цвет: {animal}");
