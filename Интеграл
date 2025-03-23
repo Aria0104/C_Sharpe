@@ -1,0 +1,49 @@
+using System.Security.Cryptography;
+
+int a1;
+int b1;
+int n1;
+
+while (true)
+{
+    Console.WriteLine("Введите нижний (a)");
+    string a0 = Console.ReadLine();
+    if (int.TryParse(a0, out a1))
+    {
+        break;
+    }
+    else { Console.WriteLine("Нельзя вводить буквы."); }
+}
+while (true)
+{
+    Console.WriteLine("Введите вверхний (b)");
+    string b0 = Console.ReadLine();
+    if (int.TryParse(b0, out b1))
+    {
+        break;
+    }
+    else { Console.WriteLine("Нельзя вводить буквы."); }
+}
+
+while (true)
+{
+    Console.WriteLine("Введите количество разбиений интеграла (n)");
+    string n0 = Console.ReadLine();
+    if (int.TryParse(n0, out n1))
+    {
+        break;
+    }
+    else { Console.WriteLine("Нельзя вводить буквы."); }
+}
+
+double h = (b1 - a1) / n1;
+double x = 0;
+double programca = 0;
+  
+
+for (int i =1; i <=n1;  i++)
+{
+    x =  h* (a1 + i * (h / 2));
+    programca += (2 * (x * x) + 3 * x);
+}
+Console.WriteLine($"Результат: {programca}");
