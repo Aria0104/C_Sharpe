@@ -1,0 +1,94 @@
+using static System.Runtime.InteropServices.JavaScript.JSType;
+double x1;
+double y1;
+double v1;
+double a1;
+double x = 0;
+double y = 0;
+while (true)
+{
+    Console.WriteLine("Введите x");
+    string one_x = Console.ReadLine(); 
+    if (double.TryParse(one_x, out x1))
+    { 
+        break; 
+    }
+    else { Console.WriteLine("Нельзя вводить буквы."); }
+}
+
+while (true)
+{ 
+    Console.WriteLine("Введите у");
+    string one_y = Console.ReadLine();
+    if (double.TryParse(one_y, out y1))
+    {
+        if (y1 >= 0)
+        {
+            break; 
+        }
+        else
+        {
+            Console.WriteLine("y должен быть больше 0. Попробуйте снова.");
+        }
+    }
+    else { Console.WriteLine("Нельзя вводить буквы."); }
+}
+
+while(true)
+{
+    Console.WriteLine("Введите начальную скорость v");
+    string one_v = Console.ReadLine();
+    if (double.TryParse(one_v, out v1))
+    {
+        if (v1 >= 0) 
+        { break; }
+        else
+        {
+            Console.WriteLine("Скорость не может быть отрицательной");
+        }
+    }
+    else { Console.WriteLine("Нельзя вводить буквы."); }
+}
+
+while (true)
+{
+    Console.WriteLine("Введите угол а");
+    string corner_a = Console.ReadLine();
+    if (((double.TryParse(corner_a, out a1))) && ((a1 >= 0) && (a1 <= 360)))
+    {
+        if (y1 == 0)
+        {
+            if ((a1 < 0) || (a1 > 180))
+            {
+                Console.WriteLine("Если y = 0 то угол должен быть от 0 до 180");
+                continue;
+            }
+        }
+        break; 
+    }
+    if ((a1 < 0) || (a1 > 360))
+    {
+        Console.WriteLine ("Нельзя вводить отрицательные цифрки и больше 360");
+        continue;
+    }
+    else { Console.WriteLine("Нельзя вводить буквы "); }
+    }
+
+    double fall_g = 9.81;
+    double t = 0;
+    double alfa_radian = a1 * (Math.PI / 180);
+
+    while (y >= 0)
+    {
+        x = x1 + (v1 * Math.Cos(alfa_radian) * t);
+        y = y1 + (v1 * Math.Sin(alfa_radian) * t - ((fall_g * t * t) / 2));
+        if (y < 0)
+        {
+            break;
+        }
+        Console.WriteLine($"|      {Math.Round(x, 2)}   |   {Math.Round(y, 2)}   ");
+        t += 0.1;
+}
+
+
+
