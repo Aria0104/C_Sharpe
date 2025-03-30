@@ -7,18 +7,9 @@ while (true)
 {
     Console.WriteLine("Введите значение");
     string znach = Console.ReadLine();
-    if (int.TryParse(znach, out znach1)) Console.WriteLine("Сложение A+B");
-    for (int i = 0; i < znach1; i++)
+    if (int.TryParse(znach, out znach1))
     {
-        for (int j = 0; j < znach1; j++)
-        {
-            Console.Write($"{A[i, j] + B[i, j]}\t");
-        }
-        Console.WriteLine();
-    }
-    break;
-    {
-         if (znach1 >= 0)
+        if (znach1 >= 0)
         {
             break;
         }
